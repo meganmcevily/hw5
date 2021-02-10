@@ -68,11 +68,7 @@ function renderRides(ridesArray) {
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-  // YOUR CODE
-  // 1 - "undefined" getting added to All Rides button
-  // 2 - Line 93 - getting error "ride" is undefined, but we have it in line 17?
-  // 3 - changing the HTML on which button is pressed --> how? looks like code from lines 17-24
-
+// ALL RIDES BUTTON
   let allRidesButton = document.querySelector('#all-filter')
     allRidesButton.addEventListener('click', async function(event) {
       event.preventDefault()
@@ -83,7 +79,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     renderRides(json)   
     }) 
-
+// NOOBER POOL BUTTON
   let nooberPoolButton = document.querySelector('#noober-pool-filter')
     nooberPoolButton.addEventListener('click', async function(event) {
      
@@ -104,7 +100,7 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log(nooberPoolArray) 
     renderRides(nooberPoolArray)
       })
-  
+  // NOOBER PURPLE BUTTON
   let nooberPurpleButton = document.querySelector('#noober-purple-filter')
   nooberPurpleButton.addEventListener('click', async function(event) {
     
@@ -125,7 +121,7 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log(nooberPurpleArray) 
     renderRides(nooberPurpleArray)
       })
-  
+  // NOOBER XL BUTTON
   let nooberXLButton = document.querySelector('#noober-xl-filter')
   nooberXLButton.addEventListener('click', async function(event) {
     
@@ -146,7 +142,7 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log(nooberXLArray) 
     renderRides(nooberXLArray)
       })
-    
+  // NOOBER X BUTTON 
   let nooberXButton = document.querySelector('#noober-x-filter')
   nooberXButton.addEventListener('click', async function(event) {
     
@@ -167,11 +163,7 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log(nooberXArray) 
     renderRides(nooberXArray)
       })
-    
 
-
-  
-  
   }) // this is the final closing bracket 
 
 

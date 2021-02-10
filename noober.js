@@ -69,5 +69,110 @@ function renderRides(ridesArray) {
 
 window.addEventListener('DOMContentLoaded', function() {
   // YOUR CODE
-})
+  // 1 - "undefined" getting added to All Rides button
+  // 2 - Line 93 - getting error "ride" is undefined, but we have it in line 17?
+  // 3 - changing the HTML on which button is pressed --> how? looks like code from lines 17-24
 
+  let allRidesButton = document.querySelector('#all-filter')
+    allRidesButton.addEventListener('click', async function(event) {
+      event.preventDefault()
+
+      let response = await fetch(`https://kiei451.com/api/rides.json`)
+      let json = await response.json()
+        console.log(json)
+
+    renderRides(json)   
+    }) 
+
+  let nooberPoolButton = document.querySelector('#noober-pool-filter')
+    nooberPoolButton.addEventListener('click', async function(event) {
+     
+      event.preventDefault()
+      document.querySelector('.rides').innerHTML = ''
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+
+    let nooberPoolArray = []
+      
+    for (let i = 0; i < json.length; i++) {
+        let ride = json[i]
+        if (levelOfService(ride) == 'Noober Pool') {
+      nooberPoolArray.push(ride) }
+      }
+
+    console.log(nooberPoolArray) 
+    renderRides(nooberPoolArray)
+      })
+  
+  let nooberPurpleButton = document.querySelector('#noober-purple-filter')
+  nooberPurpleButton.addEventListener('click', async function(event) {
+    
+      event.preventDefault()
+      document.querySelector('.rides').innerHTML = ''
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+
+    let nooberPurpleArray = []
+      
+    for (let i = 0; i < json.length; i++) {
+        let ride = json[i]
+        if (levelOfService(ride) == 'Noober Purple') {
+      nooberPurpleArray.push(ride) }
+      }
+
+    console.log(nooberPurpleArray) 
+    renderRides(nooberPurpleArray)
+      })
+  
+  let nooberXLButton = document.querySelector('#noober-xl-filter')
+  nooberXLButton.addEventListener('click', async function(event) {
+    
+      event.preventDefault()
+      document.querySelector('.rides').innerHTML = ''
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+
+    let nooberXLArray = []
+      
+    for (let i = 0; i < json.length; i++) {
+        let ride = json[i]
+        if (levelOfService(ride) == 'Noober XL') {
+      nooberXLArray.push(ride) }
+      }
+
+    console.log(nooberXLArray) 
+    renderRides(nooberXLArray)
+      })
+    
+  let nooberXButton = document.querySelector('#noober-x-filter')
+  nooberXButton.addEventListener('click', async function(event) {
+    
+      event.preventDefault()
+      document.querySelector('.rides').innerHTML = ''
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+    let json = await response.json()
+
+    let nooberXArray = []
+      
+    for (let i = 0; i < json.length; i++) {
+        let ride = json[i]
+        if (levelOfService(ride) == 'Noober X') {
+      nooberXArray.push(ride) }
+      }
+
+    console.log(nooberXArray) 
+    renderRides(nooberXArray)
+      })
+    
+
+
+  
+  
+  }) // this is the final closing bracket 
+
+
+  
